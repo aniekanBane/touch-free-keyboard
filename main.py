@@ -1,6 +1,5 @@
 import cv2 
 from cvzone import HandTrackingModule as htm
-#from pynput.keyboard import Controller
 import keyboard as K
 import cvzone as cz
 
@@ -13,14 +12,15 @@ myButton = K.Button([10, 80])
 butt = myButton.keys()
 
 fpsReader = cz.FPS()
-txt = ''
-#keyboard = Controller()
+#txt = ''
 
 if cap.isOpened() == False:
     print('Cannot open video stream')
 
 while True:
     ret, frame = cap.read()
+
+    # find hand landmarks
     img = detector.findHands(cv2.flip(frame, 1))
     lmst, bboxInfo = detector.findPosition(img)
     img = myButton.draw(img, outline="md")
@@ -30,7 +30,6 @@ while True:
         l,_,_, = detector.findDistance(8, 12, img, False)
         fingers = detector.fingersUp()
         _, text = myButton.type(img, lmst, fingers, l)
-        #keyboard.press(text)
         #txt += text
         
     
