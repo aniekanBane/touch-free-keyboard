@@ -32,7 +32,6 @@ while True:
         _, text = myButton.type(img, lmst, fingers, l)
         #txt += text
         
-    
     # cv2.rectangle(img,(10,570),(790,640),(150,0,0),cv2.FILLED)
     # cv2.putText(img,txt, (20, 630), 
     #                   cv2.FONT_HERSHEY_PLAIN, 5,(225,225,225),5)
