@@ -7,7 +7,7 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720) # HD resolution
 
-detector = htm.HandDetector(maxHands =1, detectionCon=0.7)
+detector = htm.HandDetector(maxHands=1, detectionCon=0.7)
 myButton = K.Button([10, 80])
 butt = myButton.keys()
 
