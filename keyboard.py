@@ -8,6 +8,7 @@ import cv2
 import time
 from cvzone.Utils import cornerRect
 from pynput.keyboard import Key, Controller
+
 class Button(object):
 
     kys = [['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'],
