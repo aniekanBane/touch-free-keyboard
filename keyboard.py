@@ -133,6 +133,7 @@ def TextPos(text, x, y, l):
         return (x+20, y+l)  
 
 def Text(text):
+    """button action"""
     if text == 'fn':
         return Key.shift
     if text == 'ctrl':
