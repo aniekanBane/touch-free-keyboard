@@ -7,7 +7,7 @@ This project was developed using python 3.8 with the following pacakges
 - cvzone
 Installations
 ```
-pip install packages.txt
+pip install -r packages.txt
 ```
 ## Getting Started
 In the terminal window:
