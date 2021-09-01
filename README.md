@@ -12,5 +12,7 @@ git clone https://github.com/aniekanBane/touch-free-keyboard.git
 ```
 ### Usage
 Run the main.py file:
-```python3 main.py```
+```
+python3 main.py
+```
 
