@@ -115,7 +115,12 @@ class Button(object):
 
         return img, txt
     
-    #def DragKeyboard():
+    # def DragKeyboard(self, lndms, fingers):
+    #      for i in self.boxlst:
+    #          text, x, y, w, h = i
+    #          if all(fingers):
+
+
 
 #cv2.getTextSize(text, fontFace, fontScale, thickness)          
      
@@ -154,4 +159,4 @@ def Text(text):
 #         return 150
 #     else:
 #         return w
-     
+   
