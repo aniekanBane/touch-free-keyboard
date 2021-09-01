@@ -5,6 +5,10 @@ This project was developed using python 3.8 with the following pacakges
 - OpenCV
 - pynput
 - cvzone
+Installations
+```
+pip install packages.txt
+```
 ## Getting Started
 In the terminal window:
 ```
@@ -15,4 +19,5 @@ Run the main.py file:
 ```
 python3 main.py
 ```
+Open a text editor. 
 
