@@ -5,6 +5,7 @@ This project was developed using python 3.8 with the following pacakges
 - OpenCV
 - pynput
 - cvzone
+
 Installations
 ```
 pip install -r packages.txt
