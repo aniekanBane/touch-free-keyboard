@@ -22,5 +22,5 @@ python3 main.py
 ```
 Open a text editor. Hover around the keyboard with the index finger; this should display a black circle on the key. To perform a click, join the index and middle finger on the key of choice.
 
-**NOTE: it's advisable to use an external webcam if using the "outln" option**
+`**NOTE: it's advisable to use an external webcam with better fps if using the "outln" option**`
 
