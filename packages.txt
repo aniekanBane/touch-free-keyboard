@@ -1,4 +1,3 @@
-opencv-python
 cvzone
 numpy
 mediapipe
