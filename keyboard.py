@@ -79,7 +79,7 @@ class Button(object):
                 if "outln" in outline:
                     cornerRect(img, i[1:], 25, 3, colorR=color, colorC=(0,225,100))
 
-                cv2.putText(img, text, TextPos(text,x,y,50), cv2.FONT_HERSHEY_PLAIN, 
+                cv2.putText(img, text, TextPos(text,x,y,w,h), cv2.FONT_HERSHEY_PLAIN, 
                                         2, (225, 225, 255), cv2.LINE_4)
 
         return img
@@ -99,7 +99,7 @@ class Button(object):
             if x < lndms[8][0] < x+w and y < lndms[8][1] < y+h:
                 if fingers[1] == 1 and fingers[2] == 0:
                     #cv2.rectangle(img,(x,y), (x+w, y+h), (100,0,0), cv2.FILLED)
-                    cv2.putText(img, text, TextPos(text,x,y,50), cv2.FONT_HERSHEY_PLAIN, 
+                    cv2.putText(img, text, TextPos(text,x,y,w,h), cv2.FONT_HERSHEY_PLAIN, 
                                                 2, (225, 225, 255), cv2.LINE_4)
                     cv2.circle(img, (lndms[8]), 25, (0,0,0), 3, cv2.LINE_AA)
 
@@ -107,11 +107,11 @@ class Button(object):
                     if dist < 40:
                         #self.keyboard.press(text)
                         cv2.rectangle(img,(x,y), (x+w, y+h), (0,255,0), cv2.FILLED)
-                        cv2.putText(img, text, TextPos(text,x,y,50), cv2.FONT_HERSHEY_PLAIN, 
+                        cv2.putText(img, text, TextPos(text,x,y,w,h), cv2.FONT_HERSHEY_PLAIN, 
                                                 2, (225, 225, 255), cv2.LINE_4)
                         txt = Text(text)
                         self.keyboard.press(txt)
-                        time.sleep(0.15)
+                        time.sleep(0.11)
 
         return img, txt
     
@@ -121,21 +121,14 @@ class Button(object):
     #          if all(fingers):
 
 
-
-#cv2.getTextSize(text, fontFace, fontScale, thickness)          
      
-def TextPos(text, x, y, l):
+def TextPos(text, x, y, wi, he):
     """text positions in keys"""
-    if text == 'fn':
-        return (x+15, y+l)
-    if text == 'ctrl':
-        return (x+4, y+l)
-    if text == 'cmd':
-        return (x+2, y+l)
-    if text == '':
-        return (x+28, y+l)
-    else:
-        return (x+20, y+l)  
+    ((w,h),_) = cv2.getTextSize(text, cv2.FONT_HERSHEY_PLAIN, 2, cv2.LINE_4)
+    a = (x+wi//2) - (w//2) 
+    b = (y+he//2) + (h//2)
+
+    return (a, b)  
 
 def Text(text):
     """button action"""
