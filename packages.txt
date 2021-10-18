@@ -1,4 +1,4 @@
-opencv
 cvzone
-mediapip
+numpy
+mediapipe
 pynput
