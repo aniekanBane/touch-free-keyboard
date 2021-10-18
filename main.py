@@ -23,7 +23,7 @@ while True:
     # find hand landmarks
     img = detector.findHands(cv2.flip(frame, 1))
     lmst, bboxInfo = detector.findPosition(img)
-    img = myButton.draw(img, outline="md")
+    img = myButton.draw(img, outline="std")
     #area = bboxInfo['bbox']
 
     if len(lmst):
