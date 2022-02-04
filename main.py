@@ -36,7 +36,7 @@ while True:
     # cv2.putText(img,txt, (20, 630), 
     #                   cv2.FONT_HERSHEY_PLAIN, 5,(225,225,225),5)
 
-    fps, img = fpsReader.update(img, (10,50),(0,0,0))
+    fps, img = fpsReader.update(img, (10,50),(0,0,0), 2, 2)
     
     if ret == True:
         cv2.imshow('Frame', img)
