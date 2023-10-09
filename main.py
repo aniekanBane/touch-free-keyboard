@@ -2,15 +2,14 @@ import sys
 import cv2 
 from cvzone.HandTrackingModule import HandDetector
 
-import keyboard as K
+from keyboard import keyboard
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 1280)
 cap.set(4, 720) # HD resolution
 
 detector = HandDetector(maxHands=1, detectionCon=0.7)
-myButton = K.Button([10, 80])
-butt = myButton.keys()
+_keyboard = keyboard([20, 40])
 
 # fpsReader = cz.FPS()
 
@@ -35,18 +34,14 @@ while True:
         landmarks = hand['lmList']
         bbox = hand['bbox']
 
-        img = myButton.draw(img, outline="std")
+        img = _keyboard.draw(img, style='std')
 
     if landmarks:
         fingers = detector.fingersUp(hand)
         lenght, info, img = detector.findDistance(landmarks[8][:2], landmarks[12][:2], img)
-        _, text = myButton.type(img, landmarks, fingers, lenght)
+        _, text = _keyboard.click(img, landmarks, fingers, lenght)
     
     # #area = bboxInfo['bbox']
-        
-    # cv2.rectangle(img,(10,570),(790,640),(150,0,0),cv2.FILLED)
-    # cv2.putText(img,txt, (20, 630), 
-    #                   cv2.FONT_HERSHEY_PLAIN, 5,(225,225,225),5)
 
     # fps, img = fpsReader.update(img, (10,50),(0,0,0), 2, 2)
     
